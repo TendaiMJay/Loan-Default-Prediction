@@ -6,7 +6,7 @@ The dataset provided for this project is a subset of data our team worked on for
 
 ## Objectives
 
-1. Create a machine learning model to predict defaulters and non-defaulters by analyzing historical data.
+1. Create the best machine learning model (testing for accuracy) to predict defaulters and non-defaulters by analyzing historical data.
 2. Provide recommendations on which features are important for predicting the target variable.
 
 ## Data
