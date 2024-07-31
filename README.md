@@ -44,8 +44,9 @@ We trained and evaluated the following models:
 
 1. **Logistic Regression**
 2. **Random Forest**
-3. **Support Vector Machine (SVM)**
-4. **Neural Networks**
+3. **Gradient Boosting and AdaBoost**
+4. **Support Vector Machine (SVM)**
+5. **Neural Networks**
 
 We used SMOTE (Synthetic Minority Over-sampling Technique) to address class imbalance in the training data.
 
@@ -54,26 +55,28 @@ We used SMOTE (Synthetic Minority Over-sampling Technique) to address class imba
 The results of each model were evaluated based on classification reports and accuracy scores. The model performances are summarized below:
 
 - **Logistic Regression**: 
-  - Accuracy: X.XX
-  - Important Features: interest_rate, credit_score, loan_amount
-
+  - Without SMOTE: Accuracy: 79.8% and With SMOTE: Accuracy: 54.8% 
+  - Important Features: loan_type, interest_rate, employment_type, income_level, gender, marital_status, and education_level
+    
 - **Random Forest**:
-  - Accuracy: X.XX
-  - Important Features: credit_score, loan_amount, interest_rate
+  - Without SMOTE: Accuracy: 79.7% and With SMOTE: Accuracy: 68.4% 
+  - Important Features: interest_rate, loan_amount, credit_score, loan_term
+
+- **Gradient Boosting Classifier and AdaBoost Classifier with SMOTE**:
+  - Gradient Boosting: Accuracy: 58.8% and AdaBoost: Accuracy: 55.2% 
 
 - **Support Vector Machine (SVM)**:
-  - Accuracy: X.XX
-  - Important Features: credit_score, loan_amount, interest_rate
+  - Without SMOTE: Accuracy: 79.8% and With SMOTE: Accuracy: 53.3% 
+  - Important Features: education_level, loan_type, income_type, interest_rate
 
 - **Neural Networks**:
-  - Accuracy: X.XX
-  - Important Features: credit_score, interest_rate, loan_amount
+  - Without SMOTE: Accuracy: 79.8% and With SMOTE: Accuracy: 54.8% 
 
-Based on the evaluations, [Model Name] was determined to be the best-performing model.
+Based on the evaluations, Random Forest Classifier with SMOTE was determined to be the best-performing model.
 
 ## Recommendations
 
-- **Feature Importance**: The features `credit_score`, `loan_amount`, and `interest_rate` were consistently important across different models for predicting the target variable.
+- **Feature Importance**: The feature `interest_rate` was consistently important across different models for predicting the target variable, suggesting higher interest rates are associated with higher default probability.
 - **Further Improvements**: Additional data, such as detailed income information or other financial indicators, could further enhance the model's predictive power.
 
 ## How to Run
@@ -91,7 +94,7 @@ Based on the evaluations, [Model Name] was determined to be the best-performing 
 
 3. Run the Jupyter notebook for data preparation and model training:
     ```bash
-    jupyter notebook notebooks/data_preparation_and_modeling.ipynb
+    jupyter notebook notebooks/Predicting loan defaulters.ipynb
     ```
 
 4. Evaluate the saved models using the provided test dataset.
@@ -99,8 +102,4 @@ Based on the evaluations, [Model Name] was determined to be the best-performing 
 ## License
 
 This project is licensed under the MIT License.
-
-## Acknowledgements
-
-This project was completed as part of a collaborative effort within our team at [Your Company]. Special thanks to Bajaj Finserv for providing the dataset.
 
